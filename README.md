@@ -1,15 +1,14 @@
-# ⚖️ Indonesian Legal AI Assistant: Fine-Tuned SLM (SFT & GRPO) with Advanced RAG
+# Indonesian Legal AI Assistant: Fine-Tuned SLM (SFT & GRPO) with Advanced RAG
 
 [![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
 [![Unsloth](https://img.shields.io/badge/Fine--Tuning-Unsloth%20FastRL-red.svg)](https://github.com/unslothai/unsloth)
 [![HuggingFace Model](https://img.shields.io/badge/Hugging%20Face-Models%20afihsan-yellow.svg)](https://huggingface.co/afihsan)
-[![License](https://img.shields.io/badge/License-Apache%202.0-green.svg)](LICENSE)
 
 Asisten AI spesialis hukum ketenagakerjaan dan korporasi Indonesia. Sistem ini dibangun dengan menggabungkan **Supervised Fine-Tuning (SFT)**, **Group Relative Policy Optimization (GRPO)** untuk menghasilkan proses penalaran eksplisit (*deep reasoning* di dalam tag `<think>...</think>`), serta **Advanced Retrieval-Augmented Generation (RAG)** berbasis regulasi resmi (UU Cipta Kerja No. 6/2023, PP No. 35/2021, PP No. 5/2021, dan PP No. 51/2023).
 
 ---
 
-## 📌 Repositori Model Resmi (Hugging Face)
+## Repositori Model Resmi (Hugging Face)
 
 Model telah diunggah ke Hugging Face Hub (Public) dan siap di-load secara langsung untuk inferensi maupun fine-tuning lanjutan:
 
@@ -20,7 +19,7 @@ Model telah diunggah ke Hugging Face Hub (Public) dan siap di-load secara langsu
 
 ---
 
-## 🏛️ Arsitektur Sistem End-to-End
+## Arsitektur Sistem End-to-End
 
 ```mermaid
 flowchart TD
@@ -39,7 +38,7 @@ flowchart TD
 
 ---
 
-## 📚 Sumber Daya Dataset & Basis Dokumen Hukum
+## Sumber Daya Dataset & Basis Dokumen Hukum
 
 Untuk menjaga repositori tetap ringan dan efisien (< 1 MB), file biner dataset dan dokumen PDF tidak disimpan langsung di Git, melainkan dapat diakses melalui sumber resmi berikut:
 
@@ -59,7 +58,7 @@ Pipeline RAG memanfaatkan 4 dokumen perundang-undangan Republik Indonesia:
 
 ---
 
-## 🛠️ Rincian 3 Pilar Implementasi
+## Rincian 3 Pilar Implementasi
 
 ### 1. Supervised Fine-Tuning (SFT) — `fine-tuning-submission-pgabl-aaf-fatihul-ihsan.ipynb`
 - **Arsitektur Model**: `unsloth/Qwen2.5-1.5B-Instruct`
@@ -85,7 +84,7 @@ Pipeline RAG memanfaatkan 4 dokumen perundang-undangan Republik Indonesia:
 
 ---
 
-## 🧪 Contoh Output Test Case Wajib
+## Contoh Output Test Case Wajib
 
 **Pertanyaan:**
 > *"Saya staf admin, kemarin lembur 3 jam untuk beresin laporan. Apakah saya berhak dapat uang lembur?"*
@@ -112,16 +111,7 @@ Secara ringkas, jika Anda telah menunjukkan bahwa Anda memerlukan waktu lembur u
 
 ---
 
-## 🔒 Keamanan & Kebijakan Kredensial
-
-Repositori ini menerapkan standar keamanan *clean code*:
-- **Bebas Kredensial Sensitif**: Tidak ada token otentikasi (Hugging Face Token), API Key, maupun password yang ditulis secara langsung (*hardcoded*) di dalam script atau notebook.
-- **Manajemen Secrets**: Otorisasi ke Hugging Face dilakukan secara aman menggunakan **Kaggle Secrets** (`UserSecretsClient().get_secret("HF_TOKEN")`) atau *Environment Variables* (`os.environ["HF_TOKEN"]`).
-- **File `.gitignore`**: Memastikan seluruh file lokal temporer (`.env`, `.ipynb_checkpoints`, `__pycache__`) tidak terunggah ke repositori publik.
-
----
-
-## 📁 Struktur Berkas
+## Struktur Berkas
 
 ```text
 ├── fine-tuning-submission-pgabl-aaf-fatihul-ihsan.ipynb  # Notebook SFT (Hasil run Kaggle, 62 outputs)
@@ -134,9 +124,3 @@ Repositori ini menerapkan standar keamanan *clean code*:
 ```
 
 ---
-
-## 👨‍💻 Profil Penulis
-
-- **Nama**: Aaf Fatihul Ihsan
-- **Program**: Coding Camp 2026 - AI Engineer (Proyek Akhir)
-- **Hugging Face**: [@afihsan](https://huggingface.co/afihsan)
