@@ -1,0 +1,5 @@
+1. Model Supervised Fine-Tuning (SFT):
+https://huggingface.co/afihsan/qwen2.5-1.5b-legal-chatbot-finetuned
+
+2. Model Reinforcement Learning (GRPO):
+https://huggingface.co/afihsan/qwen2.5-1.5b-legal-chatbot-grpo
